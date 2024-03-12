@@ -1,4 +1,4 @@
-// import React from "react";
+import React from "react";
 import {GroupCard} from "../GroupCard/GroupCard.tsx";
 
 interface Props {
@@ -6,16 +6,17 @@ interface Props {
 }
 
 export function Results({groups}: Props ) : React.JSX.Element {
+    console.log(groups)
 
     return (
         <div>
-        {/*{groups !== undefined && groups.result === 1 && groups.data.map((group: Group) => (*/}
-        {/*    <div key={group.id}>*/}
-        {/*        <GroupCard {...group}/>*/}
-        {/*    </div>*/}
-        {/*))}*/}
-        {/*    {groups.data !== undefined && groups.data.length === 0 || groups.result === 0 ? <div>Нет подходящих вариантов</div> : null*/}
-        {/*}*/}
+        {groups !== undefined && groups.map((group: Group) => (
+            <div key={group.id}>
+                <GroupCard {...group}/>
+            </div>
+        ))}
+            {groups.length === 0 ? <div>Нет подходящих вариантов</div> : null
+        }
         </div>
     )
 }
