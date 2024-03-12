@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 
 import "./style.css";
 import {mockGroups} from "../../mockGroups.ts";
@@ -24,26 +24,26 @@ export function Filters({ setGroups }: FiltersProps): React.JSX.Element {
         try {
             let res = mockGroups.filter((group) => {
                 let passPrivacy = true;
-                let passAvatar = true;
-                let passFriends = true;
+                // let passAvatar = true;
+                // let passFriends = true;
 
                 if (filters.privacy !== 'all' && (group.closed && filters.privacy === 'opened' || !group.closed && filters.privacy === 'closed')) {
                     passPrivacy = false;
                 }
-                if (filters.avatar !== 'all' && group.avatar_color !== filters.avatar) {
-                    passAvatar = false;
-                }
-                if (filters.friends === 'yes' && (!group.friends || group.friends.length === 0)) {
-                    passFriends = false;
-                }
-                if (filters.friends === 'no' && group.friends && group.friends.length > 0) {
-                    passFriends = false;
-                }
+                // if (filters.avatar !== 'all' && group.avatar_color !== filters.avatar) {
+                //     passAvatar = false;
+                // }
+                // if (filters.friends === 'yes' && (!group.friends || group.friends.length === 0)) {
+                //     passFriends = false;
+                // }
+                // if (filters.friends === 'no' && group.friends && group.friends.length > 0) {
+                //     passFriends = false;
+                // }
 
-                return passPrivacy && passAvatar && passFriends;
+                // return passPrivacy && passAvatar && passFriends;
             });
 
-            setGroups({ result: 1, data: res });
+            // setGroups({ result: 1, data: res });
         } catch (err) {
             console.log(err)
         }
