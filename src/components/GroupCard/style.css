@@ -1,0 +1,31 @@
+.group-container {
+    background-color: #e8e8e8;
+    border-radius: 10px;
+    margin-top: 10px;
+    display: flex;
+    height: 130px;
+    color: black;
+    /*justify-content: center;*/
+    /*flex-direction: row;*/
+}
+
+.avatar {
+    border-radius: 100%;
+    /*background-color: black;*/
+    height: 100px;
+    width: 100px;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.group-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    align-content: flex-start;
+    margin-top: 15px;
+}
+
+.group-name {
+    font-weight: bold;
+}
